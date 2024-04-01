@@ -1,5 +1,6 @@
 
-import 'package:activity2/widget/form_kontak.dart';
+import 'package:activity2/screen/register_screen.dart';
+import 'package:activity2/widget/form/form_kontak.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Data Kontak',
       debugShowCheckedModeBanner: false,
-      home: FormKontak(),
+      home: RegisterScreen(),
     );
   }
 }
