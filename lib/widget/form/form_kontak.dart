@@ -1,5 +1,3 @@
-
-
 import 'dart:io';
 
 import 'package:activity2/controller/kontak_controller.dart';
@@ -48,64 +46,76 @@ class _FormKontakState extends State<FormKontak> {
                 margin: EdgeInsets.all(10),
                 child: TextFormField(
                   controller: _namaController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Nama",
                     hintText: "Masukkan Nama",
                   ),
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 child: TextFormField(
                   controller: _emailController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Email",
                     hintText: "Masukkan Email",
                   ),
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 child: TextFormField(
                   controller: _alamatController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Alamat",
                     hintText: "Masukkan Alamat",
                   ),
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 child: TextFormField(
                   controller: _noTeleponController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Nomor Telepon",
                     hintText: "Masukkan Nomor Telepon",
                   ),
                 ),
               ),
-               Container(
-                margin: EdgeInsets.all(10),
-                child: ElevatedButton(onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    var result = await KontakController().addPerson(
-                      Kontak(
-                        nama: _namaController.text,
-                        email: _emailController.text,
-                        alamat: _alamatController.text,
-                        telepon: _noTeleponController.text,
-                        foto: _image!.path
-                      ),
-                      _image,
-                    );
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result['message'],),),);
-                  }
-                }, child: Text("Simpan")),
+              _image == null
+                  ? const Text("Tidak ada gambar yang dipilih")
+                  : Image.file(_image!),
+              ElevatedButton(
+                onPressed: getImage,
+                child: const Text("Pilih Gambar"),
+              ),
+              Container(
+                margin: const EdgeInsets.all(10),
+                child: ElevatedButton(
+                    onPressed: () async {
+                      if (_formKey.currentState!.validate()) {
+                        var result = await KontakController().addPerson(
+                          Kontak(
+                              nama: _namaController.text,
+                              email: _emailController.text,
+                              alamat: _alamatController.text,
+                              telepon: _noTeleponController.text,
+                              foto: _image!.path),
+                          _image,
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              result['message'],
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                    child: Text("Simpan")),
               )
             ],
           ),
         ));
   }
 }
-
-
