@@ -30,7 +30,7 @@ class _HomeViewState extends State<HomeView> {
         future: _controller.getPeople(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: const CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text("Error: ${snapshot.error}"));
           } else {
@@ -50,7 +50,13 @@ class _HomeViewState extends State<HomeView> {
           }
         },
       ),
-      
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, 
+              MaterialPageRoute(builder: (context) => const RegisterView()));
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
