@@ -5,6 +5,7 @@ import 'package:activity2/model/kontak.dart';
 import 'package:activity2/service/kontak_service.dart';
 
 class KontakController {
+
   final kontakService = KontakService();
 
   Future<Map<String, dynamic>> addPerson(Kontak person, File? file) async {
@@ -54,7 +55,7 @@ class KontakController {
       return people;
     } catch (e) {
       print(e);
-      throw Exception('Failed to get people');
+      throw Exception("Failed to get people");
     }
   }
 }

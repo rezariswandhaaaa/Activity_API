@@ -1,6 +1,5 @@
 
-import 'package:activity2/screen/register_view.dart';
-import 'package:activity2/widget/form/form_kontak.dart';
+import 'package:activity2/screen/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Data Kontak',
       debugShowCheckedModeBanner: false,
-      home: RegisterView(),
+      home: HomeView(),
     );
   }
 }

@@ -12,12 +12,16 @@ class RegisterView extends StatefulWidget {
 class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          HeaderKontak(),
-          FormKontak()
-        ],
+    return const Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              HeaderKontak(),
+              FormKontak()
+            ],
+          ),
+        ),
       ),
     );
   }
