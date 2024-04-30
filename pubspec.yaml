@@ -38,10 +38,10 @@ dependencies:
   image_picker: ^1.0.7
   path: ^1.9.0
   convert:
-  geolocator:
-  geocoding:
-  google_maps_flutter:
-  permission_handler:
+  geolocator: ^9.0.2
+  geocoding: ^2.0.4
+  google_maps_flutter: ^2.2.3
+  permission_handler: ^9.1.0
 
   
 
