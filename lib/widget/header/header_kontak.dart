@@ -6,7 +6,7 @@ class HeaderKontak extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Center(
+      title: const Center(
         child: Text('Registration'),
       ),
     );
